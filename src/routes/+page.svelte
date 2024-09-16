@@ -4,7 +4,7 @@
 	import { Input } from '$lib/components/ui/input/index.js';
 	import { Label } from '$lib/components/ui/label/index.js';
 	import BridgeImage from '$lib/images/bridge-black-white.webp';
-
+	import { goto } from '$app/navigation';
 	import { createQuery } from '@tanstack/svelte-query';
 	import { getViaCep } from './_api/viacep';
 
@@ -12,6 +12,10 @@
 		queryKey: ['todos'],
 		queryFn: () => getViaCep()
 	});
+
+	const handleClick = () => {
+		goto('/form');
+	};
 
 	export const toImageUrl = (processedImagePath: string) =>
 		`url('${processedImagePath.slice(1).replaceAll('\\', '/')}')`;
@@ -41,7 +45,7 @@
 			</div>
 		</Card.Content>
 		<Card.Footer>
-			<Button class="w-full">Entrar</Button>
+			<Button on:click={handleClick} class="w-full">Entrar</Button>
 		</Card.Footer>
 	</Card.Root>
 </div>

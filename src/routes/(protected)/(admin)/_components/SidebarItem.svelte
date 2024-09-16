@@ -9,8 +9,6 @@
 
 	const pathname = $page.url.pathname;
 	const disabled = pathname === path;
-
-	console.log(disabled);
 </script>
 
 <Tooltip.Root>
