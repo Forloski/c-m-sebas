@@ -9,7 +9,7 @@
 	export const trailingSlash = 'always';
 </script>
 
-<ModeWatcher />
+<!-- <ModeWatcher /> -->
 <Toaster />
 <QueryClientProvider client={queryClient}>
 	<slot />
